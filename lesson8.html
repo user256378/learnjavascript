@@ -1,0 +1,188 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="assets/css/style.css">
+    <link rel="stylesheet" href="assets/css/lesson.css">
+    <title>Learn Javascript</title>
+</head>
+
+<body>
+    <header>
+        <div class="header__menu menu">
+            <a class="menu__logo-link" href="index.html"><img class="menu__logo" src="assets/img/logo.png"></a>
+            <ul class="menu__list">
+                <li class="menu__item"><a class="menu__link" href="index.html">Головна</a></li>
+                <li class="menu__item"><a class="menu__link" href="index.html#about">Про JavaScript</a></li>
+                <li class="menu__item"><a class="menu__link" href="index.html#lessons">Уроки</a></li>
+                <li class="menu__item"><a class="menu__link" href="#footer">Контакти</a></li>
+            </ul>
+            <div onclick="openMenu();" class="burger">
+                <span class="burger__span"></span>
+                <span class="burger__span"></span>
+                <span class="burger__span"></span>
+            </div>
+
+            <div class="mobile-menu">
+                <div onclick="hideMenu()" class="cross">
+                    &#9587;
+                </div>
+                <ul class="menu__list">
+                    <li class="menu__item"><a onclick="hideMenu()" class="menu__link" href="index.html">Головна</a></li>
+                    <li class="menu__item"><a onclick="hideMenu()" class="menu__link" href="index.html#about">Про JavaScript</a></li>
+                    <li class="menu__item"><a onclick="hideMenu()" class="menu__link" href="index.html#lessons">Уроки</a></li>
+                    <li class="menu__item"><a onclick="hideMenu()" class="menu__link" href="#footer">Контакти</a></li>
+                </ul>
+            </div>
+        </div>
+    </header>
+    <main>
+        <aside class="nav">
+            <p class="nav__title">Цикл for</p>
+            <ul class="nav__list">
+                <li class="nav__item"><a class="nav__link" href="#page1">Знайомство з циклом for</a></li>
+                <li class="nav__item"><a class="nav__link" href="#page2">Цикл for in</a></li>
+            </ul>
+        </aside>
+        <div class="container">
+            <p class="container__loc"><span onclick="window.location.href = 'index.html'" class="index-link">Головна</span> / <span class="blue-highlight">Цикл for</span></p>
+            <div id="page1" class="container__item mt">
+                <h3 class="container__title">Знайомство з циклом for</h3>
+
+                <div class="code">
+                    <pre class="code-example"><code><span class="code__block"><span class="code__tag">for</span> <span class="code__sign">(</span><span class="code__tag">var</span><span class="code__name"> i</span><span class="code__sign"> = </span><span class="code__number">0</span><span class="code__sign">; </span><span class="code__name">i</span><span class="code__sign"> &lt; </span><span class="code__name">scores</span>.<span class="code__tag">length</span><span class="code__sign">; </span><span class="code__name">i</span><span class="code__sign"> = </span><span class="code__name">i</span><span class="code__sign"> + </span><span class="code__number">1</span><span class="code__sign">) {</span></span><span class="code__block">  <span class="code__name">output</span><span class="code__sign"> = </span><span class="code__string">"–||–||–"</span>;</span><span class="code__block">  <span class="code__tag">console</span>.<span class="code__tag">log</span><span class="code__sign">(</span><span class="code__name">output</span><span class="code__sign">)</span>;</span><span class="code__block"><span class="code__sign">}</span></span></code></pre>
+                </div>
+
+
+                <p class=" block container__text"> Можна використовувати цикл for без лічильника:</p>
+
+
+                <div class="code">
+                    <pre class="code-example"><code><span class="code__block"><span class="code__tag">for</span> <span class="code__sign">(</span><span class="code__sign">; </span><span class="code__name">answer</span><span class="code__sign"> != </span><span class="code__string">"forty-two"</span><span class="code__sign">;) { }</span></span></code></pre>
+                </div>
+
+
+                <div class="block remember">
+                    <p class="remember__text"><span class="pink-highlight">i = i + 1</span> ≈ <span class="pink-highlight">i++</span></p>
+                    <p class="remember__text"><span class="pink-highlight">i = i - 1</span> ≈ <span class="pink-highlight">i--</span></p>
+                </div>
+
+                <p class=" block container__text">Завдання: написати програму знаходження max. Елементи з максимальним рзультатом будемо заносити в масив, який потім виведемо.</p>
+
+                <p class=" block container__text">
+                    1 спосіб</p>
+
+
+                <div class="code">
+                    <pre class="code-example"><code><span class="code__block"><span class="code__tag">var</span> <span class="code__name">genres</span><span class="code__sign"> = []</span>;<span class="code__comment">// порожній масив</span></span><span class="code__block"><span class="code__name">genres</span><span class="code__sign">[</span><span class="code__number">0</span><span class="code__sign">] = </span><span class="code__string">"Rockabilly"</span>;</span><span class="code__block"><span class="code__name">genres</span><span class="code__sign">[</span><span class="code__number">1</span><span class="code__sign">] = </span><span class="code__string">"Ambient"</span>;</span><span class="code__block"><span class="code__tag">var</span> <span class="code__name">size</span><span class="code__sign"> = </span><span class="code__name">genres</span>.<span class="code__tag">length</span>;</span></code></pre>
+                </div>
+
+                <p class=" block container__text">
+                    2 спосіб</p>
+
+                <div class="code">
+                    <pre class="code-example"><code><span class="code__block"><span class="code__tag">var</span> <span class="code__name">genres</span><span class="code__sign"> = []</span>;<span class="code__comment">// порожній масив</span></span><span class="code__block"><span class="code__name">genres</span>.<span class="code__tag">push</span><span class="code__sign">(</span><span class="code__string">"Rockabilly"</span><span class="code__sign">)</span>;</span><span class="code__block"><span class="code__name">genres</span><span class="code__sign">[</span><span class="code__number">1</span><span class="code__sign">] = </span><span class="code__string">"Ambient"</span>;</span><span class="code__block"><span class="code__tag">var</span> <span class="code__name">size</span><span class="code__sign"> = </span><span class="code__name">genres</span>.<span class="code__tag">length</span>;</span></code></pre>
+                </div>
+                <div class="block remember">
+                    <p class="remember__text">
+                        Метод <span class="pink-highlight">push</span> створює новий елемент по наступному доступньому індексу. </p>
+
+                    <p class="remember__text">
+                        Не заповнені елементи масиву мають значення <span class="pink-highlight">undefined</span>.</p>
+                </div>
+
+                <p class=" block container__text">
+
+                    Перевірка масиву на <span class="pink-highlight">undefined</span>:</p>
+
+
+                <div class="code">
+                    <pre class="code-example"><code><span class="code__block"><span class="code__tag">if</span> <span class="code__sign">(</span><span class="code__name">myarray</span><span class="code__sign">[</span><span class="code__name">i</span><span class="code__sign">]</span><span class="code__sign"> == </span><span class="code__number">undefined</span><span class="code__sign">) {  }</span></span></code></pre>
+                </div>
+
+                <p class=" block container__text">
+                    Масив з 3 порожніми позиціями:
+                </p>
+
+                <div class="code">
+                    <pre class="code-example"><code><span class="code__block"><span class="code__tag">var</span> <span class="code__name">myarray</span><span class="code__sign"> = </span><span class="code__tag">new Array</span><span class="code__sign">(</span><span class="code__number">3</span><span class="code__sign">)</span>;</span></code></pre>
+                </div>
+
+
+                <p class=" block container__text">
+                    Код виведення списку зразків з максимальним значенням:
+                </p>
+
+
+                <div class="code">
+                    <pre class="code-example"><code><span class="code__block"><span class="code__tag">var</span> <span class="code__name">bestSolutions</span><span class="code__sign"> = []</span>;</span><span class="code__block"><span class="code__tag">for</span> <span class="code__sign">(</span><span class="code__tag">var</span><span class="code__name"> i</span><span class="code__sign"> = </span><span class="code__number">0</span><span class="code__sign">; </span><span class="code__name">i</span><span class="code__sign"> &lt; </span><span class="code__name">scores</span>.<span class="code__tag">length</span><span class="code__sign">; </span><span class="code__name">i</span><span class="code__sign">++</span><span class="code__sign">) {</span></span><span class="code__block">  <span class="code__tag">if </span><span class="code__sign">(</span><span class="code__name">scores</span><span class="code__sign">[</span><span class="code__name">i</span><span class="code__sign">] == </span><span class="code__name">highScore</span><span class="code__sign">) {</span></span><span class="code__block">    <span class="code__name">bestSolutions</span>.<span class="code__tag">push</span><span class="code__sign">(</span><span class="code__name">i</span><span class="code__sign">)</span>;</span><span class="code__block">  <span class="code__sign">}</span></span><span class="code__block"><span class="code__sign">}</span></span><span class="code__block"><span class="code__tag">console</span>.<span class="code__tag">log</span><span class="code__sign">(</span><span class="code__string">"Solutions with the highest score: "</span><span class="code__sign"> + </span><span class="code__name">bestSolutions</span><span class="code__sign">)</span>;</span></code></pre>
+                </div>
+
+                <div class="block remember">
+                    <p class="remember__text">
+                        Метод <span class="pink-highlight">console.log</span> передбачає виведення елементів масиву не використовуючи цикл, через кому.
+                    </p>
+
+                </div>
+
+
+            </div>
+
+            <div id="page2" class="container__item mt">
+                <h3 class="container__title">Цикл for in</h3>
+                <div class="block remember">
+                    <p class="remember__text">Цикл <span class="pink-highlight">for in</span> перебирає властивості об'єкта в довільному порядку.</p>
+                </div>
+
+                <div class="code">
+                    <pre class="code-example"><code><span class="code__block"><span class="code__tag">for</span> <span class="code__sign">(</span><span class="code__tag">var</span><span class="code__name"> prop</span><span class="code__tag"> in </span><span class="code__name">chevy</span><span class="code__sign">) {</span></span><span class="code__block">  <span class="code__tag">console</span>.<span class="code__tag">log</span><span class="code__sign">(</span><span class="code__name">prop</span><span class="code__sign"> + </span><span class="code__string">": "</span><span class="code__sign"> + </span><span class="code__name">chevy</span><span class="code__sign">[</span><span class="code__name">prop</span><span class="code__sign">])</span>;</span><span class="code__block"><span class="code__sign">}</span></span></code></pre>
+                </div>
+
+                <p class=" block container__text">
+                    Може бути інша змінна.
+                </p>
+
+                <p class=" block container__text">
+                    Виходить в Javascript є інший спосіб звернення до властивостей:
+                </p>
+
+                <p class=" block container__text">
+                    1 спосіб
+                </p>
+
+
+                <div class="code">
+                    <pre class="code-example"><code><span class="code__block"><span class="code__name">chevy</span>.<span class="code__name">color</span>;</span></code></pre>
+                </div>
+
+
+                <p class=" block container__text">
+                    2 спосіб
+                </p>
+
+                <div class="code">
+                    <pre class="code-example"><code><span class="code__block"><span class="code__name">chevy</span>.<span class="code__sign">[</span><span class="code__name">color</span><span class="code__sign">]</span>;<span class="code__comment">// схоже на звернення до елементів масиву</span></span><span class="code__block"><span class="code__name">chevy</span>.<span class="code__sign">[</span><span class="code__string">"co"</span><span class="code__sign"> + </span><span class="code__string">"lor"</span><span class="code__sign">]</span>;</span></code></pre>
+                </div>
+
+            </div>
+
+            <div class="bottom-nav">
+                <button onclick="window.location.href = 'lesson7.html'" class="btn bottom-nav__btn">Назад</button>
+                <button onclick="window.location.href = 'lesson9.html'" class="btn bottom-nav__btn">Вперед</button>
+            </div>
+        </div>
+    </main>
+    <footer id="footer">
+        <div class="footer">
+            <img onmouseover="socialMedia(this, 'instagram', '-hover')" onmouseout="socialMedia(this, 'instagram', '')" onclick="window.location='https://instagram.com/kristina.k.webdev'" src="assets/img/instagram.png" class="footer__img">
+            <img onmouseover="socialMedia(this, 'twitter', '-hover')" onmouseout="socialMedia(this, 'twitter', '')" onclick="window.location='https://twitter.com/KristinaKWebDev'" src="assets/img/twitter.png" class="footer__img">
+            <img onmouseover="socialMedia(this, 'behance', '-hover')" onmouseout="socialMedia(this, 'behance', '')" onclick="window.location='https://www.behance.net/k55kristina'" src="assets/img/behance.png" class="footer__img">
+        </div>
+    </footer>
+    <script src="assets/js/main.js"></script>
+</body>
+
+</html>

@@ -1,0 +1,138 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="assets/css/style.css">
+    <link rel="stylesheet" href="assets/css/lesson.css">
+    <title>Learn Javascript</title>
+</head>
+
+<body>
+    <header>
+        <div class="header__menu menu">
+            <a class="menu__logo-link" href="index.html"><img class="menu__logo" src="assets/img/logo.png"></a>
+            <ul class="menu__list">
+                <li class="menu__item"><a class="menu__link" href="index.html">Головна</a></li>
+                <li class="menu__item"><a class="menu__link" href="index.html#about">Про JavaScript</a></li>
+                <li class="menu__item"><a class="menu__link" href="index.html#lessons">Уроки</a></li>
+                <li class="menu__item"><a class="menu__link" href="#footer">Контакти</a></li>
+            </ul>
+            <div onclick="openMenu();" class="burger">
+                <span class="burger__span"></span>
+                <span class="burger__span"></span>
+                <span class="burger__span"></span>
+            </div>
+
+            <div class="mobile-menu">
+                <div onclick="hideMenu()" class="cross">
+                    &#9587;
+                </div>
+                <ul class="menu__list">
+                    <li class="menu__item"><a onclick="hideMenu()" class="menu__link" href="index.html">Головна</a></li>
+                    <li class="menu__item"><a onclick="hideMenu()" class="menu__link" href="index.html#about">Про JavaScript</a></li>
+                    <li class="menu__item"><a onclick="hideMenu()" class="menu__link" href="index.html#lessons">Уроки</a></li>
+                    <li class="menu__item"><a onclick="hideMenu()" class="menu__link" href="#footer">Контакти</a></li>
+                </ul>
+            </div>
+        </div>
+    </header>
+    <main>
+        <aside class="nav">
+            <p class="nav__title">Вступ</p>
+            <ul class="nav__list">
+                <li class="nav__item"><a class="nav__link" href="#page1">Початок</a></li>
+                <li class="nav__item"><a class="nav__link" href="#page2">Змінні і значення</a></li>
+                <li class="nav__item"><a class="nav__link" href="#page3">Синтаксис</a></li>
+            </ul>
+        </aside>
+        <div class="container">
+            <p class="container__loc"><span onclick="window.location.href = 'index.html'" class="index-link">Головна</span> / <span class="blue-highlight">Вступ</span></p>
+            <div id="page1" class="container__item mt">
+                <h3 class="container__title">Початок</h3>
+                <p class="block container__text"><span class="pink-highlight">Javascript (скорочено JS)</span> - основна мова програмування Всесвітньої павутини, яка дозволяє визначити поведінку веб-сторінок. В JS можна взаємодіяти з користувачами, реагувати на події, отримувати і використовувати дані з Інтернету, виводити графіку і т.д.</p>
+
+                <div class="block remember">
+                    <p class="remember__title text-highlight">Нагадаємо!</p>
+                    <p class="remember__text">HTML використовується для визначення контенту сторінок та їх структури. CSS-кольори, шрифти, рамки і визначають стиль оформлення сторінок. </p>
+                </div>
+
+                <p class="block container__text">JS - родич HTML i CSS і вміє визначити поведінку веб-сторінок</p>
+
+                <p class="block container__text">Програміст включає код JS прямо в сторінку, а потім завантажує її в браузер. Браузер сам виконує усе необхідне для виконання коду.</p>
+
+                <p class="block container__text">Код JS складається з <span class="pink-highlight">команд</span>. Кожна команда описує частину операції що буде виконуватися, а весь набір команд визначає поведінку сторінки.</p>
+            </div>
+
+            <div id="page2" class="container__item mt">
+                <h3 class="container__title">Змінні і значення</h3>
+                <p class="block container__text">Змінні призначені для зберігання значень.</p>
+                <p class="block container__text">Розглянемо приклади:</p>
+                <div class="code">
+                    <pre class="code-example"><code><span class="code__block"><span class="code__tag">var</span> <span class="code__name">winners</span><span class="code__sign"> = </span><span class="code__number">2</span>;<span class="code__comment">// команда оголошує змінну winners і присвоює їй числове значення 2</span></span><span class="code__block"><span class="code__tag">var</span> <span class="code__name">name</span><span class="code__sign"> = </span><span class="code__string">"Alex"</span>;<span class="code__comment">// зміннй надається послідовність символів (рядок)</span></span><span class="code__block"><span class="code__tag">var</span> <span class="code__name">log</span><span class="code__sign"> = </span><span class="code__number">false</span>;<span class="code__comment">// змінні що приймають значення true i false називають логічними (булевими)</span></span></code></pre>
+                </div>
+                <p class="block container__text">Крім чисел, рядків і логічних значень змінні можуть зберігати і інші дані. Незалежно від виду даних усі змінні створюються по одним правилам:</p>
+                <div class="code">
+                    <pre class="code-example"><code><span class="code__block"><span class="code__tag">var</span> <span class="code__name">winners</span><span class="code__sign"> = </span><span class="code__number">2</span>;</span></code></pre>
+                </div>
+                <div class="block remember">
+                    <p class="remember__title text-highlight">Запам'ятайте!</p>
+                    <ul class="remember__text list-type">
+                        <li>Оголошення змінної завжди починається з ключового слова <span class="pink-highlight">var</span></li>
+                        <li>Після цього пишемо ім'я змінної (<a class="underlined" href="#var-name">як правильно давати ім'я змінній?</a>)</li>
+                        <li>При бажанні вказується значення змінної після знака <span class="pink-highlight">=</span></li>
+                        <li>Команда присвоєння завжди закінчується знаком <span class="pink-highlight">;</span></li>
+                    </ul>
+                </div>
+                <p class=" container__text">Можна створити змінну без початкового значення: </p>
+                <div class=" block code">
+                    <pre class="code-example"><code><span class="code__block"><span class="code__tag">var</span> <span class="code__name">winners</span>;</span></code></pre>
+                </div>
+                <p class=" container__text">Отже, у змінної є <span class="pink-highlight">ім'я</span> і є <span class="pink-highlight">значення</span>.</p>
+
+            </div>
+            <div id="var-name" class="mt">
+                <div class="block remember">
+
+
+                    <p class="remember__title text-highlight">Як правильно давати ім'я змінній?</p>
+
+                    <ul class="remember__text list-type">
+                        <li>Ім'я змінної має <span class="pink-highlight">починатися</span> з літери, підкреслення або знака доллара.</li>
+                        <li>Потім можуть йти літери, підкреслення або знаки доллара - в <span class="pink-highlight">будь-якій</span> кількості.</li>
+                        <li><span class="pink-highlight">Не</span> можуть використовуватися вбудовані ключові слова.</li>
+                        <li>У JS регістр символів <span class="pink-highlight">враховується</span>.</li>
+                        <li>Ім'я змінної <span class="pink-highlight">не</span> має містити пробіл.</li>
+                    </ul>
+                </div>
+            </div>
+
+            <div id="page3" class="container__item mt">
+                <h3 class="container__title">Синтаксис</h3>
+                <ul>
+                    <li>Кожна команда закінчується символом <span class="pink-highlight">;</span></li>
+                    <li>Однорядковий коментар починається з двох похилих рисок (<span class="pink-highlight">//</span>)</li>
+                    <li>Зайві пропуски <span class="pink-highlight">дозволяються</span> (майже всюди)</li>
+                    <li>Рядки беруться в подвійні <span class="pink-highlight">лапки</span> (або одинарні)</li>
+                </ul>
+            </div>
+
+            <div class="bottom-nav">
+                <button onclick="window.location.href = 'index.html'" class="btn bottom-nav__btn">Назад</button>
+                <button onclick="window.location.href = 'lesson2.html'" class="btn bottom-nav__btn">Вперед</button>
+            </div>
+        </div>
+    </main>
+    <footer id="footer">
+        <div class="footer">
+            <img onmouseover="socialMedia(this, 'instagram', '-hover')" onmouseout="socialMedia(this, 'instagram', '')" onclick="window.location='https://instagram.com/kristina.k.webdev'" src="assets/img/instagram.png" class="footer__img">
+            <img onmouseover="socialMedia(this, 'twitter', '-hover')" onmouseout="socialMedia(this, 'twitter', '')" onclick="window.location='https://twitter.com/KristinaKWebDev'" src="assets/img/twitter.png" class="footer__img">
+            <img onmouseover="socialMedia(this, 'behance', '-hover')" onmouseout="socialMedia(this, 'behance', '')" onclick="window.location='https://www.behance.net/k55kristina'" src="assets/img/behance.png" class="footer__img">
+        </div>
+    </footer>
+    <script src="assets/js/main.js"></script>
+</body>
+
+</html>

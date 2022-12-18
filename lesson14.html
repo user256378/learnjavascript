@@ -1,0 +1,246 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="assets/css/style.css">
+    <link rel="stylesheet" href="assets/css/lesson.css">
+    <title>Learn Javascript</title>
+</head>
+
+<body>
+    <header>
+        <div class="header__menu menu">
+            <a class="menu__logo-link" href="index.html"><img class="menu__logo" src="assets/img/logo.png"></a>
+            <ul class="menu__list">
+                <li class="menu__item"><a class="menu__link" href="index.html">Головна</a></li>
+                <li class="menu__item"><a class="menu__link" href="index.html#about">Про JavaScript</a></li>
+                <li class="menu__item"><a class="menu__link" href="index.html#lessons">Уроки</a></li>
+                <li class="menu__item"><a class="menu__link" href="#footer">Контакти</a></li>
+            </ul>
+            <div onclick="openMenu();" class="burger">
+                <span class="burger__span"></span>
+                <span class="burger__span"></span>
+                <span class="burger__span"></span>
+            </div>
+
+            <div class="mobile-menu">
+                <div onclick="hideMenu()" class="cross">
+                    &#9587;
+                </div>
+                <ul class="menu__list">
+                    <li class="menu__item"><a onclick="hideMenu()" class="menu__link" href="index.html">Головна</a></li>
+                    <li class="menu__item"><a onclick="hideMenu()" class="menu__link" href="index.html#about">Про JavaScript</a></li>
+                    <li class="menu__item"><a onclick="hideMenu()" class="menu__link" href="index.html#lessons">Уроки</a></li>
+                    <li class="menu__item"><a onclick="hideMenu()" class="menu__link" href="#footer">Контакти</a></li>
+                </ul>
+            </div>
+        </div>
+    </header>
+    <main>
+        <aside class="nav">
+            <p class="nav__title">Порівняння значень</p>
+            <ul class="nav__list">
+                <li class="nav__item"><a class="nav__link" href="#page1">Як порівнювати змінні</a></li>
+                <li class="nav__item"><a class="nav__link" href="#page2">Строга рівність (===) (оператор тотожності)</a></li>
+                <li class="nav__item"><a class="nav__link" href="#page3">Ще більше перетворень типів</a></li>
+                <li class="nav__item"><a class="nav__link" href="#page4">Рівність об’єктів</a></li>
+
+                <li class="nav__item"><a class="nav__link" href="#page5">
+                        Псевдоістина та псевдохиба</a></li>
+
+                <li class="nav__item"><a class="nav__link" href="#page6">Рядок як примітив і як об’єкт</a></li>
+
+            </ul>
+        </aside>
+        <div class="container">
+            <p class="container__loc"><span onclick="window.location.href = 'index.html'" class="index-link">Головна</span> / <span class="blue-highlight">Порівняння значень</span></p>
+            <div id="page1" class="container__item mt">
+                <h3 class="container__title">Як порівнювати змінні</h3>
+
+                <div class="block remember">
+                    <p class="remember__text">Якщо обидва значення відносяться до одного типу ми просто порівнюємо їх. Якщо значення відносяться до різних типів, ми перетворюємо їх до одного типу, а потім порівнюємо.</p>
+                </div>
+
+
+                <p class="block container__text">
+                    Порівняння <span class="pink-highlight">числа</span> з <span class="pink-highlight">рядком</span>
+                </p>
+
+                <div class="block code">
+                    <pre class="code-example"><code><span class="code__block"><span class="code__number">99</span><span class="code__sign"> == </span><span class="code__string">"99"</span>;<span class="code__comment">// true</span></span><span class="code__block"><span class="code__number">99</span><span class="code__sign"> == </span><span class="code__number">99</span>;<span class="code__comment">// true</span></span><span class="code__block"><span class="code__number">99</span><span class="code__sign"> == </span><span class="code__string">"vanilla"</span>;<span class="code__comment">// false</span></span><span class="code__block"><span class="code__number">99</span><span class="code__sign"> == </span><span class="code__number">NaN</span>;<span class="code__comment">// false</span></span></code></pre>
+                </div>
+
+                <p class="block container__text">Порівняння <span class="pink-highlight">булевого</span> значення з <span class="pink-highlight">іншим</span> типом: в цьому випадку булеве значення перетворюється в число і два числа порівнюються (true -> 1, false -> 0):</p>
+
+
+                <div class="block code">
+                    <pre class="code-example"><code><span class="code__block"><span class="code__number">1</span><span class="code__sign"> == </span><span class="code__number">true</span>;<span class="code__comment">// true</span></span><span class="code__block"><span class="code__number">1</span><span class="code__sign"> == </span><span class="code__number">1</span>;<span class="code__comment">// true</span></span><span class="code__block"><span class="code__string">"1"</span><span class="code__sign"> == </span><span class="code__number">true</span>;<span class="code__comment">// true</span></span><span class="code__block"><span class="code__string">"1"</span><span class="code__sign"> == </span><span class="code__number">1</span>;<span class="code__comment">// true</span></span></code></pre>
+                </div>
+
+                <p class="block container__text">Порівняння <span class="pink-highlight">null</span> з <span class="pink-highlight">undefined</span>.
+                    Порівняння цих значень дає результат true:</p>
+
+
+                <div class="block code">
+                    <pre class="code-example"><code><span class="code__block"><span class="code__number">undefined</span><span class="code__sign"> == </span><span class="code__number">null</span>;<span class="code__comment">// true</span></span></code></pre>
+                </div>
+
+                <p class="block container__text">
+                    Перевірте, що буде результатом порівняння:</p>
+
+
+                <div class="block code">
+                    <pre class="code-example"><code><span class="code__block"><span class="code__number">1</span><span class="code__sign"> == </span><span class="code__string">" "</span>;</span></code></pre>
+                </div>
+
+            </div>
+
+            <div id="page2" class="container__item mt">
+                <h3 class="container__title">Строга рівність (===) (оператор тотожності)</h3>
+
+                <div class="block remember">
+                    <p class="remember__text">
+                        Два значення вважаються строго рівними лише в тому випадку, якщо вони відносяться до одного типу і містять одне значення.</p>
+                </div>
+
+                <p class="block container__text">
+                    Це означає, що якщо два значення відносяться до одного типу, ми переходимо до їх порівняння. Якщо ні — результат false.
+                </p>
+
+
+
+                <div class="block code">
+                    <pre class="code-example"><code><span class="code__block"><span class="code__number">99</span><span class="code__sign"> == </span><span class="code__string">"ninety-nine"</span>;<span class="code__comment">// false</span></span><span class="code__block"><span class="code__number">true</span><span class="code__sign"> == </span><span class="code__string">"true"</span>;<span class="code__comment">// false</span></span></code></pre>
+                </div>
+
+                <div class="block code">
+                    <pre class="code-example"><code><span class="code__block"><span class="code__number">99</span><span class="code__sign"> &lt;= </span><span class="code__string">"100"</span>;<span class="code__comment">// true</span></span></code></pre>
+                </div>
+
+
+                <div class="block remember">
+                    <p class="remember__text">
+                        Щоб визначити результат порівняння "banana" &lt; "mango" , треба використати алфавітний порядок. Отже "banana" &lt; "mango" , так як "b" передує "m" . А "mango" &lt; "melon" тому, що перші букви співпадають, але друга буква "a" передує "e" . В той же час "Mango" &lt; "mango" , бо в порядку символів Юнікода "M" іде раніше за "m" .
+                    </p>
+                </div>
+
+                <p class="block container__text">
+                    Також існує оператор <span class="pink-highlight">!== </span>(строга нерівність).
+                </p>
+
+            </div>
+
+            <div id="page3" class="container__item mt">
+                <h3 class="container__title">Ще більше перетворень типів</h3>
+
+                <p class="block container__text">
+                    При додаванні числа до рядка (і навпаки) Javascript <span class="pink-highlight">перетворює</span> число в рядок і виконує <span class="pink-highlight">конкатенацію</span> (поведінка протилежна тому, що відбувається у перевірці рівності):
+                </p>
+
+
+                <div class="block code">
+                    <pre class="code-example"><code><span class="code__block"><span class="code__tag">var </span><span class="code__name">addi</span><span class="code__sign"> = </span><span class="code__number">3</span><span class="code__sign"> + </span><span class="code__string">"4"</span>;<span class="code__comment">// "34"</span></span><span class="code__block"><span class="code__tag">var </span><span class="code__name">plusi</span><span class="code__sign"> = </span><span class="code__string">"4"</span><span class="code__sign"> + </span><span class="code__number">3</span>;<span class="code__comment">// "43"</span></span></code></pre>
+                </div>
+
+                <p class="block container__text">
+                    Що стосується інших арифметичних операторів: множення, ділення і віднімання, — Javascript розглядає їх як арифметичні, а не рядкові операції:
+                </p>
+
+
+                <div class="block code">
+                    <pre class="code-example"><code><span class="code__block"><span class="code__tag">var </span><span class="code__name">multi</span><span class="code__sign"> = </span><span class="code__number">3</span><span class="code__sign"> * </span><span class="code__string">"4"</span>;<span class="code__comment">// 12</span></span><span class="code__block"><span class="code__tag">var </span><span class="code__name">divi</span><span class="code__sign"> = </span><span class="code__number">80</span><span class="code__sign"> / </span><span class="code__string">"10"</span>;<span class="code__comment">// 8</span></span><span class="code__block"><span class="code__tag">var </span><span class="code__name">mini</span><span class="code__sign"> = </span><span class="code__string">"10"</span><span class="code__sign"> - </span><span class="code__number">5</span>;<span class="code__comment">// 5</span></span></code></pre>
+                </div>
+
+                <div class="block code">
+                    <pre class="code-example"><code><span class="code__block"><span class="code__tag">var </span><span class="code__name">order</span><span class="code__sign"> = </span><span class="code__number">1</span><span class="code__sign"> + </span><span class="code__number">2</span><span class="code__sign"> + </span><span class="code__string">"pizzas"</span>;<span class="code__comment">// "3 pizzas"</span></span></code></pre>
+                </div>
+
+                <p class="block container__text">
+                    Вираз опрацьовується зліва направо.
+                </p>
+
+                <div class="block code">
+                    <pre class="code-example"><code><span class="code__block"><span class="code__tag">var </span><span class="code__name">order</span><span class="code__sign"> = (</span><span class="code__number">1</span><span class="code__sign"> + </span><span class="code__number">2</span><span class="code__sign">) + </span><span class="code__string">"pizzas"</span>;<span class="code__comment">// "3 pizzas"</span></span></code></pre>
+                </div>
+
+                <div class="block code">
+                    <pre class="code-example"><code><span class="code__block"><span class="code__tag">var </span><span class="code__name">order</span><span class="code__sign"> = </span><span class="code__number">1</span><span class="code__sign"> + (</span><span class="code__number">2</span><span class="code__sign"> + </span><span class="code__string">"pizzas"</span><span class="code__sign">)</span>;<span class="code__comment">// "12 pizzas"</span></span></code></pre>
+                </div>
+
+
+            </div>
+
+            <div id="page4" class="container__item mt">
+                <h3 class="container__title">Рівність об’єктів</h3>
+
+
+                <p class="block container__text">
+                    При порівнянні об’єктів не важливо як порівнювати (== чи ===). Порівнюються посилання на ці об’єкти.
+                </p>
+                <p class="block container__text">
+                    Два посилання рівні лише в тому випадку, якщо вони посилаються на один об’єкт.
+                </p>
+
+
+            </div>
+
+
+            <div id="page5" class="container__item mt">
+                <h3 class="container__title">
+                    Псевдоістина та псевдохиба</h3>
+
+
+                <p class="block container__text">
+                    В Javascript існують значення, які не є ні true, ні false, але при цьому інтерпретуються як true або false в умовних виразах.
+                    Такі вирази називають «псевдоістиною» і «псевдохибою».
+                </p>
+
+                <div class="block remember">
+                    <p class="remember__title text-highlight">Правило:</p>
+                    <p class="remember__text">
+                        Cпочатку визначте, що вважається псевдохибою, все інше буде псевдоістиною.
+                    </p>
+                </div>
+
+                <p class="block container__text">
+                    Псевдохибні значення: <span class="pink-highlight">undefined</span>, <span class="pink-highlight">null</span>, <span class="pink-highlight">0</span>, <span class="pink-highlight">" "</span>, <span class="pink-highlight">NaN</span>.
+                </p>
+
+
+            </div>
+
+            <div id="page6" class="container__item mt">
+                <h3 class="container__title">Рядок як примітив і як об’єкт</h3>
+
+                <p class="block container__text">
+                    В Javascript рядок виглядає і як примітив і як об’єкт (з підтримкою корисних методів опрацювання рядків).
+                </p>
+
+                <p class="block container__text">
+                    Javascript створює рядки-об’єкти за нас при необхідності (коли для рядку викликається метод).
+                </p>
+
+
+
+            </div>
+
+            <div class="bottom-nav">
+                <button onclick="window.location.href = 'lesson13.html'" class="btn bottom-nav__btn">Назад</button>
+                <button onclick="window.location.href = 'lesson15.html'" class="btn bottom-nav__btn">Вперед</button>
+            </div>
+        </div>
+    </main>
+    <footer id="footer">
+        <div class="footer">
+            <img onmouseover="socialMedia(this, 'instagram', '-hover')" onmouseout="socialMedia(this, 'instagram', '')" onclick="window.location='https://instagram.com/kristina.k.webdev'" src="assets/img/instagram.png" class="footer__img">
+            <img onmouseover="socialMedia(this, 'twitter', '-hover')" onmouseout="socialMedia(this, 'twitter', '')" onclick="window.location='https://twitter.com/KristinaKWebDev'" src="assets/img/twitter.png" class="footer__img">
+            <img onmouseover="socialMedia(this, 'behance', '-hover')" onmouseout="socialMedia(this, 'behance', '')" onclick="window.location='https://www.behance.net/k55kristina'" src="assets/img/behance.png" class="footer__img">
+        </div>
+    </footer>
+    <script src="assets/js/main.js"></script>
+</body>
+
+</html>

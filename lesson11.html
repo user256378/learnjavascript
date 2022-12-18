@@ -1,0 +1,186 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="assets/css/style.css">
+    <link rel="stylesheet" href="assets/css/lesson.css">
+    <title>Learn Javascript</title>
+</head>
+
+<body>
+    <header>
+        <div class="header__menu menu">
+            <a class="menu__logo-link" href="index.html"><img class="menu__logo" src="assets/img/logo.png"></a>
+            <ul class="menu__list">
+                <li class="menu__item"><a class="menu__link" href="index.html">Головна</a></li>
+                <li class="menu__item"><a class="menu__link" href="index.html#about">Про JavaScript</a></li>
+                <li class="menu__item"><a class="menu__link" href="index.html#lessons">Уроки</a></li>
+                <li class="menu__item"><a class="menu__link" href="#footer">Контакти</a></li>
+            </ul>
+            <div onclick="openMenu();" class="burger">
+                <span class="burger__span"></span>
+                <span class="burger__span"></span>
+                <span class="burger__span"></span>
+            </div>
+
+            <div class="mobile-menu">
+                <div onclick="hideMenu()" class="cross">
+                    &#9587;
+                </div>
+                <ul class="menu__list">
+                    <li class="menu__item"><a onclick="hideMenu()" class="menu__link" href="index.html">Головна</a></li>
+                    <li class="menu__item"><a onclick="hideMenu()" class="menu__link" href="index.html#about">Про JavaScript</a></li>
+                    <li class="menu__item"><a onclick="hideMenu()" class="menu__link" href="index.html#lessons">Уроки</a></li>
+                    <li class="menu__item"><a onclick="hideMenu()" class="menu__link" href="#footer">Контакти</a></li>
+                </ul>
+            </div>
+        </div>
+    </header>
+    <main>
+        <aside class="nav">
+            <p class="nav__title">Властивість innerHTML</p>
+            <ul class="nav__list">
+                <li class="nav__item"><a class="nav__link" href="#page1">Використання властивості innerHTML</a></li>
+                <li class="nav__item"><a class="nav__link" href="#page2">Взаємодія JS зі сторінкою</a></li>
+            </ul>
+        </aside>
+        <div class="container">
+            <p class="container__loc"><span onclick="window.location.href = 'index.html'" class="index-link">Головна</span> / <span class="blue-highlight">Властивість innerHTML</span></p>
+
+
+            <div id="page1" class="container__item mt">
+                <h3 class="container__title">Використання властивості innerHTML</h3>
+
+
+                <div class="code">
+                    <pre class="code-example"><code><span class="code__block"><span class="code__tag">document</span>.<span class="code__tag">getElementById</span><span class="code__sign">(</span><span class="code__string">"code9"</span><span class="code__sign">)</span>.<span class="code__tag">innerHTML</span>;<span class="code__comment">// об’єкт з властивістю innerHTML</span></span></code></pre>
+                </div>
+
+                <p class="block container__text">
+                    Веб-сторінка являє собою живу, рухливу структуру даних, з якою може взаємодіяти код JS. Можна звертатися до елементів сторінки і читати їх вміст, або ж JS можна використовувати для зміни структури сторінки.
+                </p>
+
+            </div>
+
+            <div id="page2" class="container__item mt">
+                <h3 class="container__title">Взаємодія JS зі сторінкою</h3>
+
+                <p class="block container__text">
+                    HTML – розмітка, JS – код. Їх взаємодія відбувається через уявлення сторінки, що називається об’єктною моделлю документа (DOM). Модель DOM створюється під час завантаження сторінки браузером.
+                </p>
+
+
+                <p class="block container__text">
+                    Потрібно замінити текст з id greenplanet на "Red Alert: hit by phaser fire!". Для цього знадобиться елемент з id "greenplanet":
+                </p>
+
+
+                <div class="code">
+                    <pre class="code-example"><code><span class="code__block"><span class="code__tag">document</span>.<span class="code__tag">getElementById</span><span class="code__sign">(</span><span class="code__string">"greenplanet"</span><span class="code__sign">)</span></span></code></pre>
+                </div>
+
+                <p class="block container__text">
+                    Отримавши елемент від getElementById ми можемо виконати з ним певну операцію:
+                </p>
+
+
+                <div class="code">
+                    <pre class="code-example"><code><span class="code__block"><span class="code__tag">var </span><span class="code__name">planet</span><span class="code__sign"> = </span><span class="code__tag">document</span>.<span class="code__tag">getElementById</span><span class="code__sign">(</span><span class="code__string">"planet"</span><span class="code__sign">)</span>;</span><span class="code__block"><span class="code__name">planet</span>.<span class="code__tag">innerHTML</span><span class="code__sign"> = </span><span class="code__string">"Red Alert: hit by phaser fire!"</span>;</span></code></pre>
+                </div>
+
+                <div class="block remember">
+                    <p class="remember__text">
+                        Запитуючи елемент з DOM методом <span class="pink-highlight">getElementById</span>, ми отримуємо <span class="pink-highlight">об’єкт element</span>, який може використовуватися для читання зміни або заміни вмісту або атрибутів елемента.
+                    </p>
+                </div>
+
+
+                <p class="block container__text">
+                    Ми можемо виконати зі своїм елементом (елемент &lt;p&gt;) заміну вмісту "All is well" на "Red alert:hit by phaser fire!". Об’єкт element присвоєний змінній planet; скористаємося цією змінною для зміни однієї з властивостей, а саме innerHTML:
+                </p>
+
+
+
+                <div class="code">
+                    <pre class="code-example"><code><span class="code__block"><span class="code__tag">var </span><span class="code__name">planet</span><span class="code__sign"> = </span><span class="code__tag">document</span>.<span class="code__tag">getElementById</span><span class="code__sign">(</span><span class="code__string">"greenplanet"</span><span class="code__sign">)</span>;</span><span class="code__block"><span class="code__name">planet</span>.<span class="code__tag">innerHTML</span><span class="code__sign"> = </span><span class="code__string">"Red Alert: ..."</span>;</span></code></pre>
+                </div>
+
+                <div class="block remember">
+                    <p class="remember__text">
+                        Властивість <span class="pink-highlight">innerHTML</span> використовується для зміни вмісту елементу. В innerHTML повертається вміст елемента, без тегів елемента HTML.
+                    </p>
+                </div>
+
+
+                <p class="block container__text">
+                    Завдання: вивести на консоль вміст об’єкта planet, використовуючи властивість innerHTML.
+                </p>
+
+
+                <p class="block container__text">
+                    Щоб змінити вміст елемента, ми надаємо його властивості innerHTML рядок "Red alert: ...".
+                </p>
+
+                <p class="block container__text">
+                    Завдання: виконати зміну.
+                </p>
+
+                <p class="block container__text">
+                    Коли ми виконуємо ці дії, фактично ми змінюємо вміст веб-сторінки «на ходу»:
+                </p>
+
+                <div class="block remember">
+                    <p class="remember__text">
+                        Якщо шукаємо елемент з не існуючим ідентифікатором, то виклик getElementById поверне значення <span class="pink-highlight">null</span>.
+                    </p>
+                </div>
+
+
+                <p class="block container__text">
+                    Шукати за классом: <span class="pink-highlight">getElementByClassName</span>; із заданим ім’ям тега: <span class="pink-highlight">getElemenstByTagName</span>.
+                    В процесі завантаження і розбору файла HTML , браузер створює об’єкт element для кожного елемента сторінки і дає всі ці об’єкти в модель DOM. Таким чином модель DOM являє собою дерево об’єктів element.
+                    Властивість <span class="pink-highlight">innerHTML</span> дає весь зміст елемента, включаючи вкладені елементи(наприклад <span class="pink-highlight">&lt;em&gt;</span>, <span class="pink-highlight">&lt;img&gt;</span>).
+                    Задаючи щось innerHTML можна замінити вміст елемента, включаючи елемент <span class="pink-highlight">&lt;body&gt;</span>.
+                </p>
+
+
+                <p class="block container__text">
+                    Коли ми працюємо з DOM, дуже важливо виконувати код після повного завантаження сторінки (а ми шукаємо елемент, який ще не існує):
+                </p>
+
+                <p class="block container__text">
+                    Вирішення проблеми: перемістити скрипт в кінець розділу <span class="pink-highlight">&lt;body&gt;</span>. Тобто наказати браузеру виконувати код скрипта, тільки після повного завантаження сторінки і побудови моделі DOM. Спочатку створюється функція з кодом, що має виконуватися після завантаження сторінки. Ця функція присвоюється властивості onload об’єкта window. Об’єкт window викличе фукцію, пов’язану з властивістю onload, але після того як сторінка повністю завантажиться.
+                </p>
+
+
+                <div class="code">
+                    <pre class="code-example"><code><span class="code__block">&lt;<span class="code__tag">script</span>&gt;</span><span class="code__block"><span class="code__tag">function </span><span class="code__name">init</span><span class="code__sign">() {</span></span><span class="code__block">  <span class="code__tag">var </span><span class="code__name">planet</span><span class="code__sign"> = </span><span class="code__tag">document</span>.<span class="code__tag">getElementById</span><span class="code__sign">(</span><span class="code__string">"..."</span><span class="code__sign">)</span>;</span><span class="code__block">  <span class="code__tag">var </span><span class="code__name">planet</span>.<span class="code__tag">innerHTML</span><span class="code__sign"> = </span><span class="code__string">"..."</span>;</span><span class="code__block"><span class="code__sign">}</span></span><span class="code__block">  </span><span class="code__block"><span class="code__tag">window</span>.<span class="code__tag">onload</span><span class="code__sign"> = </span><span class="code__name">init</span>;</span><span class="code__block">&lt;/<span class="code__tag">script</span>&gt;</span></code></pre>
+                </div>
+
+
+                <p class="block container__text">
+                    Припустимо, що має трапитися якась важлива подія і нам необхідно про неї дізнатися (наприклад «сторінка повністю завантажена»). В таких випадках застосовується функції оберненого виклику, які ще називають обробниками подій. Робота таких функцій грунтується на тому, що ми передаємо ці функції об’єктам, які знають подію. Коли виникає подія об’єкт викликає отриману функцію, тобто оповіщює нас про настання події. Можна писати опрацювавши події для виклику функції кожні 5 секунд, або коли користувач натиснув на кнопку і тд.
+                </p>
+
+            </div>
+
+            <div class="bottom-nav">
+                <button onclick="window.location.href = 'lesson10.html'" class="btn bottom-nav__btn">Назад</button>
+                <button onclick="window.location.href = 'lesson12.html'" class="btn bottom-nav__btn">Вперед</button>
+            </div>
+        </div>
+    </main>
+    <footer id="footer">
+        <div class="footer">
+            <img onmouseover="socialMedia(this, 'instagram', '-hover')" onmouseout="socialMedia(this, 'instagram', '')" onclick="window.location='https://instagram.com/kristina.k.webdev'" src="assets/img/instagram.png" class="footer__img">
+            <img onmouseover="socialMedia(this, 'twitter', '-hover')" onmouseout="socialMedia(this, 'twitter', '')" onclick="window.location='https://twitter.com/KristinaKWebDev'" src="assets/img/twitter.png" class="footer__img">
+            <img onmouseover="socialMedia(this, 'behance', '-hover')" onmouseout="socialMedia(this, 'behance', '')" onclick="window.location='https://www.behance.net/k55kristina'" src="assets/img/behance.png" class="footer__img">
+        </div>
+    </footer>
+    <script src="assets/js/main.js"></script>
+</body>
+
+</html>

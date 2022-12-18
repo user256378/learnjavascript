@@ -1,0 +1,183 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="assets/css/style.css">
+    <link rel="stylesheet" href="assets/css/lesson.css">
+    <title>Learn Javascript</title>
+</head>
+
+<body>
+    <header>
+        <div class="header__menu menu">
+            <a class="menu__logo-link" href="index.html"><img class="menu__logo" src="assets/img/logo.png"></a>
+            <ul class="menu__list">
+                <li class="menu__item"><a class="menu__link" href="index.html">Головна</a></li>
+                <li class="menu__item"><a class="menu__link" href="index.html#about">Про JavaScript</a></li>
+                <li class="menu__item"><a class="menu__link" href="index.html#lessons">Уроки</a></li>
+                <li class="menu__item"><a class="menu__link" href="#footer">Контакти</a></li>
+            </ul>
+            <div onclick="openMenu();" class="burger">
+                <span class="burger__span"></span>
+                <span class="burger__span"></span>
+                <span class="burger__span"></span>
+            </div>
+
+            <div class="mobile-menu">
+                <div onclick="hideMenu()" class="cross">
+                    &#9587;
+                </div>
+                <ul class="menu__list">
+                    <li class="menu__item"><a onclick="hideMenu()" class="menu__link" href="index.html">Головна</a></li>
+                    <li class="menu__item"><a onclick="hideMenu()" class="menu__link" href="index.html#about">Про JavaScript</a></li>
+                    <li class="menu__item"><a onclick="hideMenu()" class="menu__link" href="index.html#lessons">Уроки</a></li>
+                    <li class="menu__item"><a onclick="hideMenu()" class="menu__link" href="#footer">Контакти</a></li>
+                </ul>
+            </div>
+        </div>
+    </header>
+    <main>
+        <aside class="nav">
+            <p class="nav__title">Масиви</p>
+            <ul class="nav__list">
+                <li class="nav__item"><a class="nav__link" href="#page1">Знайомство з масивами</a></li>
+                <li class="nav__item"><a class="nav__link" href="#page2">Використання масивів</a></li>
+            </ul>
+        </aside>
+        <div class="container">
+            <p class="container__loc"><span onclick="window.location.href = 'index.html'" class="index-link">Головна</span> / <span class="blue-highlight">Масиви</span></p>
+            <div id="page1" class="container__item mt">
+                <h3 class="container__title">Знайомство з масивами</h3>
+                <div class="block remember">
+                    <p class="remember__text"><span class="pink-highlight">Масив</span> – тип JS, здатний зберігати декілька однотипних значень.</p>
+                </div>
+
+                <div class="code">
+                    <pre class="code-example"><code><span class="code__block"><span class="code__tag">var</span> <span class="code__name">scores</span><span class="code__sign"> = [</span><span class="code__number">60</span><span class="code__sign">, </span><span class="code__number">50</span><span class="code__sign">, </span><span class="code__number">60</span><span class="code__sign">, </span><span class="code__number">58</span><span class="code__sign">, </span><span class="code__number">54</span><span class="code__sign">, </span><span class="code__number">54</span><span class="code__sign">, </span><span class="code__number">58</span><span class="code__sign">, </span><span class="code__number">50</span><span class="code__sign">, </span><span class="code__number">52</span><span class="code__sign">, </span><span class="code__number">54</span><span class="code__sign">]</span>;</span></code></pre>
+                </div>
+
+
+                <p class="block container__text">
+                    Звернення до елементу масиву:
+                </p>
+
+
+                <div class="code">
+                    <pre class="code-example"><code><span class="code__block"><span class="code__tag">var</span> <span class="code__name">solution2</span><span class="code__sign"> = </span><span class="code__name">scores</span><span class="code__sign">[</span><span class="code__number">2</span><span class="code__sign">]</span>;</span><span class="code__block"><span class="code__tag">alert</span><span class="code__sign">(</span><span class="code__string">"Solution 2 prodeced"</span><span class="code__sign"> + </span><span class="code__name">solution2</span><span class="code__sign"> + </span><span class="code__string">"bubbles"</span><span class="code__sign">)</span>;</span></code></pre>
+                </div>
+
+                <p class="block container__text">
+                    Створимо масив для зберігання сортів морозива:
+                </p>
+
+                <div class="code">
+                    <pre class="code-example"><code><span class="code__block"><span class="code__tag">var</span> <span class="code__name">flavors</span><span class="code__sign"> = [</span><span class="code__string">"vanilla"</span><span class="code__sign">, </span><span class="code__string">"butterscotch"</span><span class="code__sign">, </span><span class="code__string">"lavender"</span><span class="code__sign">]</span>;</span></code></pre>
+                </div>
+
+
+                <p class="block container__text">
+                    Індекс також використовується для зміни значень, що зберігаються в масиві.
+                </p>
+
+                <p class="block container__text">
+                    Щоб знайти довжину масиву, використовується властивість <span class="pink-highlight">length</span>:
+                </p>
+
+                <div class="code">
+                    <pre class="code-example"><code><span class="code__block"><span class="code__tag">var</span> <span class="code__name">numFlavors</span><span class="code__sign"> = </span><span class="code__name">flavors</span>.<span class="code__tag">length</span>;</span></code></pre>
+                </div>
+
+
+                <p class="block container__text">
+                    Порожній масив:
+                </p>
+
+                <div class="code">
+                    <pre class="code-example"><code><span class="code__block"><span class="code__tag">var</span> <span class="code__name">emptyArray</span><span class="code__sign"> = []</span>;</span></code></pre>
+                </div>
+
+                <p class="block container__text">
+                    Не обов’язково зберігати всі дані одного типу:
+                </p>
+
+                <div class="code">
+                    <pre class="code-example"><code><span class="code__block"><span class="code__tag">var</span> <span class="code__name">mas</span><span class="code__sign"> = [</span><span class="code__number">1</span><span class="code__sign">, </span><span class="code__number">2</span><span class="code__sign">, </span><span class="code__string">"test"</span><span class="code__sign">, </span><span class="code__number">4</span><span class="code__sign">, </span><span class="code__number">5</span><span class="code__sign">]</span>;</span></code></pre>
+                </div>
+
+                <p class="block container__text">
+                    Що буде якщо звернутися до завеликого або замалого індексу масиву? Отримаєте результат <span class="pink-highlight">undefined</span>.
+                </p>
+
+                <div class="block remember">
+                    <p class="remember__text"><span class="pink-highlight">Length</span> завжди на 1 більше останнього індекс. Тож щоб отримати останній елемент:</p>
+                </div>
+
+                <div class="code">
+                    <pre class="code-example"><code><span class="code__block"><span class="code__tag">var</span> <span class="code__name">lastElement</span><span class="code__sign"> = <span class="code__name">myArray</span><span class="code__sign">[</span><span class="code__name">myArray</span>.<span class="code__tag">length</span><span class="code__sign"> - </span><span class="code__number">1</span><span class="code__sign">]</span>;</span></code></pre>
+                </div>
+
+                <p class="block container__text">
+
+                    Треба вивести список усіх зразків і результатів по кожному зразку. Загальну кількість зразківі, max результат i N зразків де він досягнутий.
+                </p>
+
+                <p class="block container__text">
+                    Через цикл <span class="pink-highlight">while</span>:
+                </p>
+
+                <div class=" block code">
+                    <pre class="code-example"><code><span class="code__block"><span class="code__tag">var</span> <span class="code__name">scores</span><span class="code__sign"> = [</span><span class="code__number">60</span><span class="code__sign">, </span><span class="code__number">50</span><span class="code__sign">, </span><span class="code__number">60</span><span class="code__sign">, </span><span class="code__number">58</span><span class="code__sign">, </span><span class="code__number">54</span><span class="code__sign">, </span><span class="code__number">54</span><span class="code__sign">, </span><span class="code__number">58</span><span class="code__sign">, </span><span class="code__number">50</span><span class="code__sign">, </span><span class="code__number">52</span><span class="code__sign">, </span><span class="code__number">54</span><span class="code__sign">]</span>;</span><span class="code__block"><span class="code__tag">var</span> <span class="code__name">output</span>;</span><span class="code__block"><span class="code__tag">var</span> <span class="code__name">i</span><span class="code__sign"> = </span><span class="code__number">0</span>;</span><span class="code__block">  </span><span class="code__block"><span class="code__tag">while</span> <span class="code__sign">(</span><span class="code__name">i</span><span class="code__sign"> &lt; </span><span class="code__name">scores</span>.<span class="code__tag">length</span><span class="code__sign">) {</span></span><span class="code__block">  <span class="code__name">output</span><span class="code__sign"> = </span><span class="code__string">"Bubble solution #"</span><span class="code__sign"> + </span><span class="code__name">i</span><span class="code__sign"> + </span><span class="code__string">"score: "</span><span class="code__sign"> + </span><span class="code__name">scores</span><span class="code__sign">[</span><span class="code__name">i</span><span class="code__sign">]</span>;</span><span class="code__block">  <span class="code__tag">console</span>.<span class="code__tag">log</span><span class="code__sign">(</span><span class="code__name">output</span><span class="code__sign">)</span>;</span><span class="code__block">  <span class="code__name">i</span><span class="code__sign"> = </span><span class="code__name">i</span><span class="code__sign"> + </span><span class="code__number">1</span>;</span><span class="code__block"><span class="code__sign">}</span>;</span></code></pre>
+                </div>
+
+            </div>
+
+            <div id="page2" class="container__item mt">
+                <h3 class="container__title">Використання масивів</h3>
+                <!--<p class="block container__text">
+                    Винесемо фрагмент коду для виведення усіх результатів з обчисленням максимального результату в функцію printAndGetHighScore, а у функцію getBestResults занесемо фрагмент для обчислення кращих результатів що рівні максимуму.
+                </p>-->
+                <p class="block container__text">
+                    Нехай, ми маємо ще один масив
+                </p>
+
+                <div class="code">
+                    <pre class="code-example"><code><span class="code__block"><span class="code__tag">var</span> <span class="code__name">costs</span><span class="code__sign"> = [</span><span class="code__number">25</span><span class="code__sign">, </span><span class="code__number">27</span><span class="code__sign">, </span><span class="code__number">25</span><span class="code__sign">, ... ]</span>;</span></code></pre>
+                </div>
+
+                <p class="block container__text">
+                    Потрібно визначити зразок з максимальним результатом у якому витрати мінімальні. Масив costs повторює структуру масиву scores тобто витрати на виробництво кожного зразку зберігаються в елементі з тим самим індексом що і результат цього зразку. Таким масиви називають паралельними.
+                </p>
+
+                <p class="block container__text">
+                    Напишемо псевдокод програми:
+                </p>
+
+
+                <div class="code">
+                    <pre class="code-example"><code><span class="code__block"><span class="code__tag">function</span> <span class="code__name">getMostEffectiveSolution</span><span class="code__sign">(</span><span class="code__name">score</span><span class="code__sign">, </span><span class="code__name">costs</span><span class="code__sign">, </span><span class="code__name">highscore</span><span class="code__sign">) {</span></span><span class="code__block">  оголосити змінну <span class="code__name">cost</span> та присвоїти їй <span class="code__number">100</span></span><span class="code__block">  оголосити змінну <span class="code__name">index</span></span><span class="code__block">  <span class="code__tag">for</span> <span class="code__sign">(</span><span class="code__tag">var</span><span class="code__name"> i</span><span class="code__sign"> = </span><span class="code__number">0</span><span class="code__sign">; </span><span class="code__name">i</span><span class="code__sign"> &lt; </span><span class="code__name">scores</span>.<span class="code__tag">length</span><span class="code__sign">; </span><span class="code__name">i</span><span class="code__sign">++</span><span class="code__sign">) {</span></span><span class="code__block">    <span class="code__tag">якщо</span> результат зразку в <span class="code__name">scores</span><span class="code__sign">[</span><span class="code__name">i</span><span class="code__sign">]</span> максимальний</span><span class="code__block">      <span class="code__tag">якщо</span> поточне значення витрат<span class="code__sign"> &lt; </span>витрат зразку тоді</span><span class="code__block">        надати<span class="code__name"> index </span>значення змінній <span class="code__name">i</span></span><span class="code__block">        надати витрати на виробництво змінній<span class="code__name"> cost</span></span><span class="code__block">      кінець <span class="code__tag">якщо</span></span><span class="code__block">    кінець <span class="code__tag">якщо</span></span><span class="code__block">  кінець <span class="code__tag">for</span></span><span class="code__block">  <span class="code__tag">return</span><span class="code__name"> index</span>;</span><span class="code__block">}</span></code></pre>
+                </div>
+
+
+
+            </div>
+
+            <div class="bottom-nav">
+                <button onclick="window.location.href = 'lesson6.html'" class="btn bottom-nav__btn">Назад</button>
+                <button onclick="window.location.href = 'lesson8.html'" class="btn bottom-nav__btn">Вперед</button>
+            </div>
+        </div>
+    </main>
+    <footer id="footer">
+        <div class="footer">
+            <img onmouseover="socialMedia(this, 'instagram', '-hover')" onmouseout="socialMedia(this, 'instagram', '')" onclick="window.location='https://instagram.com/kristina.k.webdev'" src="assets/img/instagram.png" class="footer__img">
+            <img onmouseover="socialMedia(this, 'twitter', '-hover')" onmouseout="socialMedia(this, 'twitter', '')" onclick="window.location='https://twitter.com/KristinaKWebDev'" src="assets/img/twitter.png" class="footer__img">
+            <img onmouseover="socialMedia(this, 'behance', '-hover')" onmouseout="socialMedia(this, 'behance', '')" onclick="window.location='https://www.behance.net/k55kristina'" src="assets/img/behance.png" class="footer__img">
+        </div>
+    </footer>
+    <script src="assets/js/main.js"></script>
+</body>
+
+</html>

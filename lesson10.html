@@ -1,0 +1,245 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="assets/css/style.css">
+    <link rel="stylesheet" href="assets/css/lesson.css">
+    <title>Learn Javascript</title>
+</head>
+
+<body>
+    <header>
+        <div class="header__menu menu">
+            <a class="menu__logo-link" href="index.html"><img class="menu__logo" src="assets/img/logo.png"></a>
+            <ul class="menu__list">
+                <li class="menu__item"><a class="menu__link" href="index.html">Головна</a></li>
+                <li class="menu__item"><a class="menu__link" href="index.html#about">Про JavaScript</a></li>
+                <li class="menu__item"><a class="menu__link" href="index.html#lessons">Уроки</a></li>
+                <li class="menu__item"><a class="menu__link" href="#footer">Контакти</a></li>
+            </ul>
+            <div onclick="openMenu();" class="burger">
+                <span class="burger__span"></span>
+                <span class="burger__span"></span>
+                <span class="burger__span"></span>
+            </div>
+
+            <div class="mobile-menu">
+                <div onclick="hideMenu()" class="cross">
+                    &#9587;
+                </div>
+                <ul class="menu__list">
+                    <li class="menu__item"><a onclick="hideMenu()" class="menu__link" href="index.html">Головна</a></li>
+                    <li class="menu__item"><a onclick="hideMenu()" class="menu__link" href="index.html#about">Про JavaScript</a></li>
+                    <li class="menu__item"><a onclick="hideMenu()" class="menu__link" href="index.html#lessons">Уроки</a></li>
+                    <li class="menu__item"><a onclick="hideMenu()" class="menu__link" href="#footer">Контакти</a></li>
+                </ul>
+            </div>
+        </div>
+    </header>
+    <main>
+        <aside class="nav">
+            <p class="nav__title">Передача об’єктів функціям</p>
+            <ul class="nav__list">
+                <li class="nav__item"><a class="nav__link" href="#page1">Як передавати об'єкти</a></li>
+                <li class="nav__item"><a class="nav__link" href="#page2">Поведінка об’єктів</a></li>
+                <li class="nav__item"><a class="nav__link" href="#page3">Вдосконалення метода drive</a></li>
+                <li class="nav__item"><a class="nav__link" href="#page4">Як поведінка впливає на стан</a></li>
+            </ul>
+        </aside>
+        <div class="container">
+            <p class="container__loc"><span onclick="window.location.href = 'index.html'" class="index-link">Головна</span> / <span class="blue-highlight">Передача об’єктів функціям</span></p>
+            <div id="page1" class="container__item mt">
+                <h3 class="container__title">Як передавати об'єкти</h3>
+
+                <div class="block remember">
+                    <p class="remember__text">
+                        Коли ми викликаємо функцію і передаємо їй об'єкт, ми передаємо не сам об'єкт, а <span class="pink-highlight">посилання</span> на нього.</p>
+                </div>
+
+
+                <p class="block container__text">
+                    Виходить що при передачі по значенню в параметрі передається копія посилання (не копія об'єкта), яка теж вказує на об'єкт. Це означає що при зміні властивості об'єкта в функції змінюється властивість початкового об'єкта.
+                </p>
+
+                <div class="code">
+                    <pre class="code-example"><code><span class="code__block"><span class="code__tag">function</span> <span class="code__name">loseWeight</span><span class="code__sign">(</span><span class="code__name">dog</span><span class="code__sign">, </span><span class="code__name">amount</span><span class="code__sign">) {</span></span><span class="code__block">  <span class="code__name">dog</span>.<span class="code__name">weight</span><span class="code__sign"> = </span><span class="code__name">dog</span>.<span class="code__name">weight</span><span class="code__sign"> - </span><span class="code__name">amount</span>;</span><span class="code__block"><span class="code__sign">}</span></span><span class="code__block">  </span><span class="code__block"><span class="code__tag">alert</span><span class="code__sign">(</span><span class="code__name">fido</span>.<span class="code__name">name</span><span class="code__sign"> + </span><span class="code__string">" now weighs "</span><span class="code__sign"> + </span><span class="code__name">fido</span>.<span class="code__name">weight</span><span class="code__sign">)</span>;</span></code></pre>
+                </div>
+
+                <p class="block container__text">
+                    У генераторі фраз ми будували рядок за допомогою конкатенації, а тут створюємо новий об'єкт.
+                </p>
+            </div>
+
+            <div id="page2" class="container__item mt">
+                <h3 class="container__title">Поведінка об’єктів</h3>
+
+
+
+
+                <div class="block remember">
+                    <p class="remember__text">
+                        Об'єкти можуть виконувати <span class="pink-highlight">операції</span>.
+                    </p>
+                </div>
+
+
+                <p class="block container__text">
+                    Наприклад, собака гавкає, бігає, приносить палку і так далі.</p>
+
+
+
+                <div class="code">
+                    <pre class="code-example"><code><span class="code__block"><span class="code__tag">var</span> <span class="code__name">fiat</span><span class="code__sign"> = {</span><span class="code__block">  <span class="code__name">make</span><span class="code__sign">: </span><span class="code__string">"Fiat"</span><span class="code__sign">, </span></span><span class="code__block">  <span class="code__name">model</span><span class="code__sign">: </span><span class="code__string">"500"</span><span class="code__sign">, </span></span><span class="code__block">  <span class="code__name">year</span><span class="code__sign">: </span><span class="code__number">1957</span><span class="code__sign">, </span></span><span class="code__block">  <span class="code__name">color</span><span class="code__sign">: </span><span class="code__string">"Medium Blue"</span><span class="code__sign">, </span></span><span class="code__block">  <span class="code__name">passengers</span><span class="code__sign">: </span><span class="code__number">2</span><span class="code__sign">, </span></span><span class="code__block">  <span class="code__name">convertible</span><span class="code__sign">: </span><span class="code__number">false</span><span class="code__sign">, </span><span class="code__block">  <span class="code__name">mileage</span><span class="code__sign">: </span><span class="code__number">880000</span>,</span><span class="code__block">  <span class="code__name">drive</span><span class="code__sign">: </span><span class="code__tag">function</span><span class="code__sign">() {</span></span><span class="code__block">    <span class="code__tag">alert</span><span class="code__sign">(</span><span class="code__string">"Zoom zoom!"</span><span class="code__sign">)</span>;</span><span class="code__block">  <span class="code__sign">}</span></span><span class="code__block"><span class="code__sign">}</span>;</span></code></pre>
+                </div>
+
+                <p class="block container__text">
+                    Функція додається в об'єкт; її властивості можуть бути функціями.
+                    Ім'я функції не вказуємо, воно співпадає з іменем властивості.
+                </p>
+
+                <div class="block remember">
+                    <p class="remember__text">
+
+                        Функції, що визначаються в об'єктах називаються <span class="pink-highlight">методами</span>.
+                    </p>
+                </div>
+
+
+                <p class="block container__text">
+                    Коли викликаємо метод drive також використовуємо точковий запис, але з іменем об'єкта fiat і ім'ям властивості drive як у виклику будь-якої функції далі ідуть круглі дужки.
+                </p>
+
+
+                <div class="block code">
+                    <pre class="code-example"><code><span class="code__block"><span class="code__name">fiat</span>.<span class="code__name">drive</span><span class="code__sign">()</span>;<span class="code__comment">// виклик метода drive об'єкта fiat</span></span></code></pre>
+                </div>
+
+            </div>
+
+            <div id="page3" class="container__item mt">
+                <h3 class="container__title">Вдосконалення метода drive</h3>
+
+
+                <p class="block container__text">
+                    Зазвичай машиною можна керувати коли ввімкнено двигун, змоделюємо цю поведінку:
+                </p>
+
+                <ul class="block container__text list-num">
+                    <li>
+                        Додаємо булеву властивість для зберігання стану двигуна (Ввімкнений чи вимкнений)
+                    </li>
+                    <li>
+                        Два метода для ввімкнення і зупинки двигуна
+                    </li>
+                    <li>
+                        Перевірку в метод drive, яка встановлює (впевнюється) що двигун ввімкнено, перед тим як ми зможемо керувати машиною.
+                    </li>
+                </ul>
+
+                <p class="block container__text">
+                    В методі drive змінна <span class="pink-highlight">started</span> не є локальною, глобальною і параметром. Вона є властивістю об'єкта fiat. JS не розуміє якого саме об'єкта. В JS існує ключове слово this, яке призначене для позначення поточного об'єкта з яким ми працюємо.
+                </p>
+
+                <p class="block container__text">
+
+                    Треба додати <span class="pink-highlight">this.</span> перед кожним зверненням до властивості <span class="pink-highlight">started</span>.
+                </p>
+                <p class="block container__text">
+
+                    Коли ми викликаємо будь-який метод ми можемо розраховувати на те що <span class="pink-highlight">this</span> в тілі цього метода буде вказувати на об'єкт, метод якого було викликано.
+                </p>
+
+                <div class="block remember">
+                    <p class="remember__text">
+                        <span class="pink-highlight">Метод</span> - це функція присвоєна імені властивості в об'єкті.
+                    </p>
+                    <p class="remember__text">
+                        Функція викликається по іменам, а методи - крапковим записом.
+                    </p>
+                </div>
+
+                <p class="block container__text">
+                    Метод можна додати в об'єкт після того як він вже створений (за аналогією з додаванням властивості в об'єкт).
+                </p>
+
+                <div class="block code">
+                    <pre class="code-example"><code><span class="code__block"><span class="code__name">car</span>.<span class="code__name">engageTurbo</span><span class="code__sign"> = </span><span class="code__tag">function</span><span class="code__sign">() {...}</span>;</span></code></pre>
+                </div>
+
+                <p class="block container__text">
+                    Копіювання методів <span class="pink-highlight">start</span>, <span class="pink-highlight">stop</span>, і <span class="pink-highlight">drive</span> в кожний об'єкт призводить до дублювання коду. Вирішення проблеми розбирається пізніше.
+                </p>
+
+
+            </div>
+
+            <div id="page4" class="container__item mt">
+                <h3 class="container__title">Як поведінка впливає на стан</h3>
+
+                <div class="block remember">
+                    <p class="remember__text">
+                        Об'єкти мають <span class="pink-highlight">стан</span> і <span class="pink-highlight">поведінку</span>.
+                    </p>
+                </div>
+
+                <p class="block container__text">
+                    Властивості об'єкта дозволяють зберігати дані поточного стану — рівень бензину, поточну температуру, тощо. Методи об'єкта можуть наділяти об'єкти поведінкою — запустити двигун, ввімкнути обігрів і так далі. Тобто стан і поведінка пов'язані. Не можна завести машину, якщо у баці немає бензину.
+                </p>
+
+                <p class="block container__text">
+                    Додамо в автомобіль датчик бензину — властивість <span class="pink-highlight">fuel</span>, а заправку буде виконувати метод <span class="pink-highlight">addFuel</span>, де параметр amount використовується як приріст палива в властивості <span class="pink-highlight">fuel</span>.
+                </p>
+
+                <div class="code">
+                    <pre class="code-example"><code><span class="code__block"><span class="code__tag">var</span> <span class="code__name">fiat</span><span class="code__sign"> = {</span><span class="code__block">  <span class="code__name">fuel</span><span class="code__sign">: </span><span class="code__number">0</span><span class="code__sign">, </span></span><span class="code__block">  <span class="code__name">addFuel</span><span class="code__sign">: </span><span class="code__tag">function</span><span class="code__sign">() {</span></span><span class="code__block">    <span class="code__tag">this</span>.<span class="code__name">fuel</span><span class="code__sign"> = </span><span class="code__tag">this</span>.<span class="code__name">fuel</span><span class="code__sign"> + </span><span class="code__name">amount</span>;</span><span class="code__block">  <span class="code__sign">}</span></span><span class="code__block"><span class="code__sign">}</span>;</span></code></pre>
+                </div>
+
+                <p class="block container__text">
+                    Якщо палива нема машина не поїде, тож треба додати перевірку рівня палива, а потім зменшувати fuel на 1 при кожному виклику drive.
+                </p>
+                <p class="block container__text">
+                    Але ж на поточний момент ми можемо завести машину без палива. Спробуйте виправити це.
+                </p>
+
+                <div class="block remember">
+                    <p class="remember__title text-highlight">Javascript надає багато готових об'єктів:</p>
+                    <ul class="remember__text list-type">
+                        <li><span class="pink-highlight">Date</span> - для роботи з датою і часом</li>
+                        <li><span class="pink-highlight">Math</span> - генерація випадкових чисел і не тільки</li>
+                        <li><span class="pink-highlight">RegExp</span> - дозволяє шукати текст в рядках по заданому шаблону</li>
+                        <li><span class="pink-highlight">JSON</span> - дозволяє передавати об'єкти в інші додатки</li>
+                        <li><span class="pink-highlight">Document</span> - для запису у веб-сторінку коду</li>
+                        <li><span class="pink-highlight">Window</span> - надає властивості і методи що відносяться до браузера</li>
+                        <li><span class="pink-highlight">Console</span> - метод log використовується де ведення повідомлень в консоль</li>
+                    </ul>
+                </div>
+
+                <p class="block container__text">
+                    Функція — теж значення властивості.
+                </p>
+                <p class="block container__text">
+                    Наступний крок — навчитися створювати об'єкти, які будуть схожими і будуть використовувати код, що знаходиться в одному місці.
+                </p>
+
+            </div>
+
+            <div class="bottom-nav">
+                <button onclick="window.location.href = 'lesson9.html'" class="btn bottom-nav__btn">Назад</button>
+                <button onclick="window.location.href = 'lesson11.html'" class="btn bottom-nav__btn">Вперед</button>
+            </div>
+        </div>
+    </main>
+    <footer id="footer">
+        <div class="footer">
+            <img onmouseover="socialMedia(this, 'instagram', '-hover')" onmouseout="socialMedia(this, 'instagram', '')" onclick="window.location='https://instagram.com/kristina.k.webdev'" src="assets/img/instagram.png" class="footer__img">
+            <img onmouseover="socialMedia(this, 'twitter', '-hover')" onmouseout="socialMedia(this, 'twitter', '')" onclick="window.location='https://twitter.com/KristinaKWebDev'" src="assets/img/twitter.png" class="footer__img">
+            <img onmouseover="socialMedia(this, 'behance', '-hover')" onmouseout="socialMedia(this, 'behance', '')" onclick="window.location='https://www.behance.net/k55kristina'" src="assets/img/behance.png" class="footer__img">
+        </div>
+    </footer>
+    <script src="assets/js/main.js"></script>
+</body>
+
+</html>

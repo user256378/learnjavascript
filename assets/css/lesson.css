@@ -1,0 +1,201 @@
+@import url("https://fonts.googleapis.com/css2?family=Inter:wght@100;200;300;400;500;600;700;800;900&display=swap");
+.header__menu {
+  padding: 15px 100px;
+  background-color: #fff;
+  border-bottom: 1px solid #E5E7EB; }
+
+header {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%; }
+
+main {
+  background-color: #fff;
+  margin-top: 59px;
+  display: flex;
+  flex-direction: row;
+  justify-content: flex-start;
+  padding: 40px;
+  align-items: flex-start; }
+
+.container__title {
+  line-height: 2rem; }
+
+.nav {
+  position: fixed;
+  top: calc(59px + 40px);
+  height: calc(100vh - 59px - 40px - 75px);
+  overflow-y: scroll;
+  left: 40px;
+  width: 230px;
+  padding: 0 40px 0 0;
+  min-width: 230px; }
+  .nav__title {
+    font-weight: 600;
+    margin-bottom: 10px;
+    font-size: 18px; }
+  .nav__list {
+    border-left: 1px solid rgba(229, 231, 235, 0.5); }
+  .nav__item {
+    cursor: pointer;
+    padding: 2px 0 2px 10px;
+    border-left: 1px solid rgba(229, 231, 235, 0.5);
+    width: -webkit-fit-content;
+    width: -moz-fit-content;
+    width: fit-content;
+    line-height: 1.2;
+    margin: 5px 0 5px -1px; }
+    .nav__item a {
+      font-weight: 400;
+      line-height: 0;
+      color: #0F172A;
+      font-size: 16px; }
+    .nav__item:hover {
+      border-left: 1px solid rgba(51, 65, 85, 0.7); }
+    .nav__item-active {
+      border-left: 1px solid #25a0f7; }
+      .nav__item-active a {
+        color: #25a0f7; }
+      .nav__item-active:hover {
+        border-left: 1px solid #25a0f7; }
+
+.container {
+  padding: 0 40px;
+  padding-left: 230px; }
+  .container__loc {
+    color: rgba(51, 65, 85, 0.7);
+    font-size: 14px;
+    margin-bottom: 24px; }
+    .container__loc .index-link {
+      color: rgba(51, 65, 85, 0.7);
+      cursor: pointer; }
+      .container__loc .index-link:hover {
+        color: #334155; }
+  .container h3 {
+    font-size: 32px;
+    margin-bottom: 20px; }
+  .container p {
+    color: #0F172A;
+    font-weight: 400; }
+
+.block {
+  margin: 20px 0; }
+
+.remember {
+  padding: 12px 22px;
+  width: 72vw;
+  background-color: rgba(229, 231, 235, 0.5);
+  border-left: 4px solid #25a0f7; }
+  .remember__title {
+    margin-bottom: 5px; }
+
+.text-highlight {
+  font-weight: 500 !important;
+  font-size: 20px; }
+
+.code {
+  font-size: 14px;
+  overflow-x: scroll;
+  width: 72vw;
+  background-color: #18334a;
+  color: rgba(255, 255, 255, 0.8);
+  padding: 12px 22px;
+  border-left: 4px solid #EC4899; }
+
+.code__block {
+  display: block; }
+
+.code__tag {
+  color: #94ddff; }
+
+.code__number {
+  color: #94ffd8; }
+
+.code__name {
+  color: #ff94cf; }
+
+.code__string {
+  color: #ffbd94; }
+
+.code__comment {
+  color: #fff;
+  z-index: 1;
+  opacity: 0.55;
+  margin-left: 80px; }
+
+.list-type {
+  list-style-type: disc;
+  margin-left: 20px; }
+
+.container__item ul {
+  list-style-type: disc;
+  margin-left: 20px; }
+
+.underlined {
+  border-bottom: 1px solid rgba(51, 65, 85, 0.7); }
+
+.mt {
+  padding-top: 80px;
+  margin-top: -80px;
+  -webkit-background-clip: content-box;
+  background-clip: content-box; }
+
+.bottom-nav {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-evenly;
+  margin-top: 40px; }
+
+.bottom-nav__btn {
+  min-width: 120px; }
+
+.list-none {
+  list-style-type: none !important;
+  margin-left: 0 !important; }
+
+.list-num {
+  list-style-type: decimal !important;
+  margin-left: 20px !important; }
+
+li .code {
+  margin-left: -20px; }
+
+@media (max-width: 959px) {
+  .nav {
+    display: none; }
+
+  .container {
+    padding: 0; }
+
+  main {
+    padding: 20px 40px; }
+
+  .code {
+    width: 86vw;
+    font-size: 12px; }
+
+  .block {
+    margin: 15px 0; }
+
+  .remember {
+    width: 86vw; }
+
+  .container__text {
+    font-size: 16px; }
+
+  .container h3 {
+    font-size: 24px;
+    margin-bottom: 15px; }
+
+  .container__loc {
+    font-size: 13px; } }
+@media (max-width: 584px) {
+  main {
+    padding: 20px 30px; } }
+@media (max-width: 404px) {
+  main {
+    padding: 20px; }
+
+  .container__text {
+    width: 96%; } }

@@ -1,0 +1,227 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="assets/css/style.css">
+    <link rel="stylesheet" href="assets/css/lesson.css">
+    <title>Learn Javascript</title>
+</head>
+
+<body>
+    <header>
+        <div class="header__menu menu">
+            <a class="menu__logo-link" href="index.html"><img class="menu__logo" src="assets/img/logo.png"></a>
+            <ul class="menu__list">
+                <li class="menu__item"><a class="menu__link" href="index.html">Головна</a></li>
+                <li class="menu__item"><a class="menu__link" href="index.html#about">Про JavaScript</a></li>
+                <li class="menu__item"><a class="menu__link" href="index.html#lessons">Уроки</a></li>
+                <li class="menu__item"><a class="menu__link" href="#footer">Контакти</a></li>
+            </ul>
+            <div onclick="openMenu();" class="burger">
+                <span class="burger__span"></span>
+                <span class="burger__span"></span>
+                <span class="burger__span"></span>
+            </div>
+
+            <div class="mobile-menu">
+                <div onclick="hideMenu()" class="cross">
+                    &#9587;
+                </div>
+                <ul class="menu__list">
+                    <li class="menu__item"><a onclick="hideMenu()" class="menu__link" href="index.html">Головна</a></li>
+                    <li class="menu__item"><a onclick="hideMenu()" class="menu__link" href="index.html#about">Про JavaScript</a></li>
+                    <li class="menu__item"><a onclick="hideMenu()" class="menu__link" href="index.html#lessons">Уроки</a></li>
+                    <li class="menu__item"><a onclick="hideMenu()" class="menu__link" href="#footer">Контакти</a></li>
+                </ul>
+            </div>
+        </div>
+    </header>
+    <main>
+        <aside class="nav">
+            <p class="nav__title">Значення undefined</p>
+            <ul class="nav__list">
+                <li class="nav__item"><a class="nav__link" href="#page1">Знайомство з undefined</a></li>
+                <li class="nav__item"><a class="nav__link" href="#page2">Оператор typeof</a></li>
+                <li class="nav__item"><a class="nav__link" href="#page3">Використання null</a></li>
+                <li class="nav__item"><a class="nav__link" href="#page4">Значення NaN</a></li>
+                <li class="nav__item"><a class="nav__link" href="#page5">Робота з NaN</a></li>
+            </ul>
+        </aside>
+        <div class="container">
+            <p class="container__loc"><span onclick="window.location.href = 'index.html'" class="index-link">Головна</span> / <span class="blue-highlight">Значення undefined</span></p>
+            <div id="page1" class="container__item mt">
+                <h3 class="container__title">Знайомство з undefined</h3>
+
+                <p class="block container__text">Кожного разу коли ви використовуєте змінну, яка ще не була оголошена, намагаєтесь отримати значення властивості, що не існує (або вилучена), звертаєтесь до елемента масиву, що не існує – ви стикаєтесь з undefined.</p>
+
+                <div class="block remember">
+                    <p class="remember__text">
+                        <span class="pink-highlight">Undefined</span> – значення, яке не було ініціалізоване. Це дозволяє перевірити чи було задано значення змінної.
+                    </p>
+                </div>
+
+                <p class="block container__text">Приклади:</p>
+
+
+
+                <div class="block code">
+                    <pre class="code-example"><code><span class="code__block"><span class="code__tag">var </span><span class="code__name">x</span>;</span><span class="code__block">  </span><span class="code__block"><span class="code__tag">if </span><span class="code__sign">(</span><span class="code__name">x</span><span class="code__sign"> == </span><span class="code__number">undefined</span><span class="code__sign">) {</span></span><span class="code__block">  // змінна х не задана! Прийняти міри!</span><span class="code__block"><span class="code__sign">}</span></span><span class="code__block">  </span><span class="code__block"><span class="code__tag">var </span><span class="code__name">customer</span><span class="code__sign"> = {</span></span><span class="code__block">  <span class="code__name">name</span><span class="code__sign">: </span><span class="code__string">"Jenny"</span>;</span><span class="code__block"><span class="code__sign">}</span>;</span><span class="code__block">  </span><span class="code__block"><span class="code__tag">if </span><span class="code__sign">(</span><span class="code__name">customer</span>.<span class="code__name">phoneNumber</span><span class="code__sign"> == </span><span class="code__number">undefined</span><span class="code__sign">) {</span></span><span class="code__block">  // отримати телефон клієнта</span><span class="code__block"><span class="code__sign">}</span></span></code></pre>
+                </div>
+
+
+                <p class="block container__text">
+                    Значення <span class="pink-highlight">undefined</span> відноситься до типу <span class="pink-highlight">undefined</span>.
+                </p>
+
+
+
+            </div>
+
+            <div id="page2" class="container__item mt">
+                <h3 class="container__title">Оператор typeof</h3>
+
+                <div class="block remember">
+                    <p class="remember__text">
+                        Оператор <span class="pink-highlight">typeof</span> вбудований в Java Script. Він використовується для перевірки типу операнди (того, до чого застосовується оператор).
+                    </p>
+                </div>
+
+
+                <div class="block code">
+                    <pre class="code-example"><code><span class="code__block"><span class="code__tag">var </span><span class="code__name">subject</span><span class="code__sign"> = </span><span class="code__string">"Just a string"</span>;</span><span class="code__block"><span class="code__tag">var </span><span class="code__name">probe</span><span class="code__sign"> = </span><span class="code__tag">typeof </span><span class="code__name">subject</span>;</span><span class="code__block"><span class="code__tag">console</span>.<span class="code__tag">log</span><span class="code__sign">(</span><span class="code__name">probe</span><span class="code__sign">)</span>;</span></code></pre>
+                </div>
+
+
+                <p class="block container__text">
+                    Розробники JS з самого початку прийняли рішення: змінні, які ще не були ініціалізовані, матимуть одне значення, а інше значення будуть використовувати для позначення відсутності об’єкта. Отже, null частіше використовується там, де об’єкт ще не створений, або не знайдений, а undefined – для неініціалізованих змінних, відсутніх властивостей об’єктів, або значень в масивах.
+                </p>
+
+                <p class="block container__text">
+                    Змінній також можна присвоїти <span class="pink-highlight">null</span>:
+                </p>
+
+
+                <div class="block code">
+                    <pre class="code-example"><code><span class="code__block"><span class="code__tag">var </span><span class="code__name">test</span><span class="code__sign"> = </span><span class="code__number">null</span>;<span class="code__comment">// це означає , що в майбутньому ми присвоїмо об’єкт цій змінній, але поки що не присвоїли</span></span></code></pre>
+                </div>
+
+
+
+            </div>
+
+            <div id="page3" class="container__item mt">
+                <h3 class="container__title">Використання null</h3>
+
+
+                <p class="block container__text">
+                    Часто потрібно переконатися в тому, що функція чи метод повертає повноцінний об’єкт, а не null – на випадок, якщо функція не змогла знайти чи створити його:
+                </p>
+
+
+
+                <div class="block code">
+                    <pre class="code-example"><code><span class="code__block"><span class="code__tag">var </span><span class="code__name">header</span><span class="code__sign"> = </span><span class="code__tag">document</span>.<span class="code__tag">getElementById</span><span class="code__sign">(</span><span class="code__string">"header"</span><span class="code__sign">)</span>;</span><span class="code__block">  </span><span class="code__block"><span class="code__tag">if </span><span class="code__sign">(</span><span class="code__name">header</span><span class="code__sign"> == </span><span class="code__number">null</span><span class="code__sign">) {</span></span><span class="code__block">  // заголовку немає!</span><span class="code__block"><span class="code__sign">}</span></span></code></pre>
+                </div>
+
+            </div>
+
+            <div id="page4" class="container__item mt">
+                <h3 class="container__title">Значення NaN</h3>
+
+
+                <p class="block container__text">
+                    Існують числові значення, які неможливо представити в JS. Для них використовують спеціальне значення: NaN("Not a Number"). Наприклад, 0/0.
+                </p>
+
+
+                <div class="block code">
+                    <pre class="code-example"><code><span class="code__block"><span class="code__tag">var </span><span class="code__name">a</span><span class="code__sign"> = </span><span class="code__number">0</span><span class="code__sign"> / </span><span class="code__number">0</span>;</span><span class="code__block"><span class="code__tag">var </span><span class="code__name">b</span><span class="code__sign"> = </span><span class="code__string">"food"</span><span class="code__sign"> * </span><span class="code__number">1000</span>;</span><span class="code__block"><span class="code__tag">var </span><span class="code__name">c</span><span class="code__sign"> = </span><span class="code__tag">Math</span>.<span class="code__tag">sqrt</span><span class="code__sign">(</span><span class="code__number">-9</span><span class="code__sign">)</span>;</span></code></pre>
+                </div>
+
+                <div class="block remember">
+                    <p class="remember__text">
+                        <span class="pink-highlight">NaN</span> – це єдине значення в JS , не рівне самому собі.
+
+                    </p>
+                    <p class="remember__text">
+                        <span class="pink-highlight">NaN</span> != <span class="pink-highlight">NaN</span>
+
+                    </p>
+                </div>
+
+
+
+
+            </div>
+
+            <div id="page5" class="container__item mt">
+                <h3 class="container__title">Робота з NaN</h3>
+
+                <p class="block container__text">
+                    Перевірка числа на NaN (помилкова):
+                </p>
+
+
+                <div class="block code">
+                    <pre class="code-example"><code><span class="code__block"><span class="code__tag">if </span><span class="code__sign">(</span><span class="code__name">myNum</span><span class="code__sign"> == </span><span class="code__number">NaN</span><span class="code__sign">) {</span></span><span class="code__block">  <span class="code__name">myNum</span><span class="code__sign"> = </span><span class="code__number">0</span>;</span><span class="code__block"><span class="code__sign">}</span></span></code></pre>
+                </div>
+
+                <p class="block container__text">
+                    Не працює тощу що значення NaN не дорівнює нічому, навіть самому собі.
+                </p>
+
+                <p class="block container__text">
+                    Замість цього використовують функцію isNaN:
+                </p>
+
+
+                <div class="block code">
+                    <pre class="code-example"><code><span class="code__block"><span class="code__tag">if </span><span class="code__sign">(</span><span class="code__tag">isNaN</span><span class="code__sign">(</span><span class="code__name">myNum</span><span class="code__sign">)) {</span></span><span class="code__block">  <span class="code__name">myNum</span><span class="code__sign"> = </span><span class="code__number">0</span>;</span><span class="code__block"><span class="code__sign">}</span></span></code></pre>
+                </div>
+
+                <p class="block container__text">
+                    Замість цього використовують функцію isNaN:
+                </p>
+
+                <p class="block container__text">
+                    Спробуйте перевірити тип NaN:
+                </p>
+
+
+                <div class="block code">
+                    <pre class="code-example"><code><span class="code__block"><span class="code__tag">var </span><span class="code__name">test</span><span class="code__sign"> = </span><span class="code__number">0</span><span class="code__sign"> / </span><span class="code__number">0</span>;</span><span class="code__block"><span class="code__tag">console</span>.<span class="code__tag">log</span><span class="code__sign">(</span><span class="code__tag">typeof</span><span class="code__name"> test</span><span class="code__sign">)</span>;</span></code></pre>
+                </div>
+
+                <div class="block remember">
+                    <p class="remember__text">
+                        Вірніше розуміти <span class="pink-highlight">NaN</span> як <span class="pink-highlight">«число, що не маєпредставлення» замість «не число»</span>.
+                    </p>
+                </div>
+
+
+                <div class="block code">
+                    <pre class="code-example"><code><span class="code__block"><span class="code__tag">var </span><span class="code__name">a</span><span class="code__sign"> = </span><span class="code__number">10</span><span class="code__sign"> / </span><span class="code__number">0</span>;<span class="code__comment">// a матиме тип Infinity</span></span></code></pre>
+                </div>
+
+            </div>
+
+            <div class="bottom-nav">
+                <button onclick="window.location.href = 'lesson12.html'" class="btn bottom-nav__btn">Назад</button>
+                <button onclick="window.location.href = 'lesson14.html'" class="btn bottom-nav__btn">Вперед</button>
+            </div>
+        </div>
+    </main>
+    <footer id="footer">
+        <div class="footer">
+            <img onmouseover="socialMedia(this, 'instagram', '-hover')" onmouseout="socialMedia(this, 'instagram', '')" onclick="window.location='https://instagram.com/kristina.k.webdev'" src="assets/img/instagram.png" class="footer__img">
+            <img onmouseover="socialMedia(this, 'twitter', '-hover')" onmouseout="socialMedia(this, 'twitter', '')" onclick="window.location='https://twitter.com/KristinaKWebDev'" src="assets/img/twitter.png" class="footer__img">
+            <img onmouseover="socialMedia(this, 'behance', '-hover')" onmouseout="socialMedia(this, 'behance', '')" onclick="window.location='https://www.behance.net/k55kristina'" src="assets/img/behance.png" class="footer__img">
+        </div>
+    </footer>
+    <script src="assets/js/main.js"></script>
+</body>
+
+</html>

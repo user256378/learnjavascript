@@ -1,0 +1,141 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="assets/css/style.css">
+    <link rel="stylesheet" href="assets/css/lesson.css">
+    <title>Learn Javascript</title>
+</head>
+
+<body>
+    <header>
+        <div class="header__menu menu">
+            <a class="menu__logo-link" href="index.html"><img class="menu__logo" src="assets/img/logo.png"></a>
+            <ul class="menu__list">
+                <li class="menu__item"><a class="menu__link" href="index.html">Головна</a></li>
+                <li class="menu__item"><a class="menu__link" href="index.html#about">Про JavaScript</a></li>
+                <li class="menu__item"><a class="menu__link" href="index.html#lessons">Уроки</a></li>
+                <li class="menu__item"><a class="menu__link" href="#footer">Контакти</a></li>
+            </ul>
+            <div onclick="openMenu();" class="burger">
+                <span class="burger__span"></span>
+                <span class="burger__span"></span>
+                <span class="burger__span"></span>
+            </div>
+
+            <div class="mobile-menu">
+                <div onclick="hideMenu()" class="cross">
+                    &#9587;
+                </div>
+                <ul class="menu__list">
+                    <li class="menu__item"><a onclick="hideMenu()" class="menu__link" href="index.html">Головна</a></li>
+                    <li class="menu__item"><a onclick="hideMenu()" class="menu__link" href="index.html#about">Про JavaScript</a></li>
+                    <li class="menu__item"><a onclick="hideMenu()" class="menu__link" href="index.html#lessons">Уроки</a></li>
+                    <li class="menu__item"><a onclick="hideMenu()" class="menu__link" href="#footer">Контакти</a></li>
+                </ul>
+            </div>
+        </div>
+    </header>
+    <main>
+        <aside class="nav">
+            <p class="nav__title">Атрибути</p>
+            <ul class="nav__list">
+                <li class="nav__item"><a class="nav__link" href="#page1">Дії з атрибутами</a></li>
+                <li class="nav__item"><a class="nav__link" href="#page2">Що ще можна робити з моделлю DOM?</a></li>
+            </ul>
+        </aside>
+        <div class="container">
+            <p class="container__loc"><span onclick="window.location.href = 'index.html'" class="index-link">Головна</span> / <span class="blue-highlight">Атрибути</span></p>
+            <div id="page1" class="container__item mt">
+                <h3 class="container__title">Дії з атрибутами</h3>
+
+                <p class="block container__text">
+                    Зробимо текст: "Red Alert" червоним тривожним кольором.
+                </p>
+                <p class="block container__text">
+                    Визначимо для класу "redtext" правило CSS, що надає абзацу червоний колір тексту.
+                </p>
+                <p class="block container__text">
+                    Додамо код, який бере елемент абзацу "greenplanet" і додає до нього клас redtext.
+                </p>
+
+                <div class="block remember">
+                    <p class="remember__text">
+                        Об’єкти element містять метод <span class="pink-highlight">setAttribute</span>, який може викликатися для завдання атрибутів елементів HTML.
+                        Метод використовується для додавання чи зміни вже існуючого атрибута.</p>
+                </div>
+
+                <div class="code">
+                    <pre class="code-example"><code><span class="code__block"><span class="code__name">planet</span>.<span class="code__tag">setAttribute</span><span class="code__sign">(</span><span class="code__string">"class"</span><span class="code__sign">, </span><span class="code__string">"redtext"</span><span class="code__sign">)</span>;</span></code></pre>
+                </div>
+
+                <div class="block remember">
+                    <p class="remember__title text-highlight">
+                        Метод отримує два аргументи:
+                    </p>
+
+                    <ul class="remember__text list-type">
+                        <li>ім’я атрибута</li>
+                        <li>значення атрибута</li>
+                    </ul>
+                </div>
+
+
+                <div class="block remember">
+                    <p class="remember__text">
+                        Значення атрибута можна читати методом <span class="pink-highlight">getAttribute</span>.
+                    </p>
+                </div>
+
+                <div class="code">
+                    <pre class="code-example"><code><span class="code__block"><span class="code__tag">var </span><span class="code__name">scoop</span><span class="code__sign"> = </span><span class="code__tag">document</span>.<span class="code__tag">getElementById</span><span class="code__sign">(</span><span class="code__string">"raspberry"</span><span class="code__sign">)</span>;</span><span class="code__block"><span class="code__tag">var </span><span class="code__name">altText</span><span class="code__sign"> = </span><span class="code__name">scoop</span>.<span class="code__tag">getAttribute</span><span class="code__sign">(</span><span class="code__string">"alt"</span><span class="code__sign">)</span>;</span><span class="code__block"><span class="code__tag">console</span>.<span class="code__tag">log</span><span class="code__sign">(</span><span class="code__string">"I can not see the image in the console,"</span><span class="code__sign">)</span>;</span><span class="code__block"><span class="code__tag">console</span>.<span class="code__tag">log</span><span class="code__sign">(</span><span class="code__string">"but i'm told it looks like: "</span><span class="code__sign"> + </span><span class="code__name">altText</span><span class="code__sign">)</span>;</span></code></pre>
+                </div>
+
+                <p class="block container__text">
+                    Якщо шуканий атрибут не існує в елементі то ми отримаємо <span class="pink-highlight">null</span>.
+                </p>
+
+                <p class="block container__text">
+                    Перевірка:
+                </p>
+
+
+                <div class="block code">
+                    <pre class="code-example"><code><span class="code__block"><span class="code__tag">var </span><span class="code__name">scoop</span><span class="code__sign"> = </span><span class="code__tag">document</span>.<span class="code__tag">getElementById</span><span class="code__sign">(</span><span class="code__string">"raspberry"</span><span class="code__sign">)</span>;</span><span class="code__block"><span class="code__tag">var </span><span class="code__name">altText</span><span class="code__sign"> = </span><span class="code__name">scoop</span>.<span class="code__tag">getAttribute</span><span class="code__sign">(</span><span class="code__string">"alt"</span><span class="code__sign">)</span>;</span><span class="code__block">  </span><span class="code__block"><span class="code__tag">if </span><span class="code__sign">(</span><span class="code__name">altText</span><span class="code__sign"> == </span><span class="code__number">null</span><span class="code__sign">) {</span></span><span class="code__block">  <span class="code__tag">console</span>.<span class="code__tag">log</span><span class="code__sign">(</span><span class="code__string">"No here an alt attribute"</span><span class="code__sign">)</span>;</span><span class="code__block"><span class="code__sign">}</span><span class="code__tag"> else </span><span class="code__sign">{</span></span><span class="code__block">  <span class="code__tag">console</span>.<span class="code__tag">log</span><span class="code__sign">(</span><span class="code__string">"I can not see the image in the console,"</span><span class="code__sign">)</span>;</span><span class="code__block">  <span class="code__tag">console</span>.<span class="code__tag">log</span><span class="code__sign">(</span><span class="code__string">"but i'm told it looks like: "</span><span class="code__sign"> + </span><span class="code__name">altText</span><span class="code__sign">)</span>;</span><span class="code__block"><span class="code__sign">}</span></span></code></pre>
+                </div>
+
+            </div>
+
+            <div id="page2" class="container__item mt">
+                <h3 class="container__title">Що ще можна робити з моделлю DOM?</h3>
+
+                <ul class="block container__text list-type">
+                    <li><span class="pink-highlight">Отримувати</span> елементи (всі елементи класу "onsale", значення введені користувачем в формі).</li>
+                    <li><span class="pink-highlight">Створювати</span> і <span class="pink-highlight">додавати</span> елементи в DOM.</li>
+                    <li><span class="pink-highlight">Вилучати</span> елементи.</li>
+                    <li><span class="pink-highlight">Перебирати</span> елементи (дочірні даного, сусідні).</li>
+                </ul>
+
+            </div>
+
+
+            <div class="bottom-nav">
+                <button onclick="window.location.href = 'lesson11.html'" class="btn bottom-nav__btn">Назад</button>
+                <button onclick="window.location.href = 'lesson13.html'" class="btn bottom-nav__btn">Вперед</button>
+            </div>
+        </div>
+    </main>
+    <footer id="footer">
+        <div class="footer">
+            <img onmouseover="socialMedia(this, 'instagram', '-hover')" onmouseout="socialMedia(this, 'instagram', '')" onclick="window.location='https://instagram.com/kristina.k.webdev'" src="assets/img/instagram.png" class="footer__img">
+            <img onmouseover="socialMedia(this, 'twitter', '-hover')" onmouseout="socialMedia(this, 'twitter', '')" onclick="window.location='https://twitter.com/KristinaKWebDev'" src="assets/img/twitter.png" class="footer__img">
+            <img onmouseover="socialMedia(this, 'behance', '-hover')" onmouseout="socialMedia(this, 'behance', '')" onclick="window.location='https://www.behance.net/k55kristina'" src="assets/img/behance.png" class="footer__img">
+        </div>
+    </footer>
+    <script src="assets/js/main.js"></script>
+</body>
+
+</html>
